@@ -17,22 +17,46 @@
  */
 @import "foundation-icons";
 
-.alert-box{
+body {
+  background: #f6f6f5;
+}
+
+.alert-box {
   margin-top: 1.25rem;
 }
+
+.row .login-container {
+  margin-top: 10%;
+}
+
 .signup-panel {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-top: 30px;
+  vertical-align: middle;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
 }
+
+.signup-panel .row .flash {
+  margin: 2% 2.5%;
+}
+
+.signup-panel .logo {
+  margin-top: 10%;
+}
+
+.signup-panel .login {
+  border-left: 1px solid #eee;
+}
+
 .signup-panel i {
-    font-size: 30px;
-    line-height: 50px;
-    color: #999;
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
 }
-.signup-panel .input-box input, .signup-panel .input-box span{
-    height: 50px;
+
+.signup-panel .input-box input, .signup-panel .input-box span {
+  height: 50px;
 }
 
 .signup-panel label {
@@ -40,15 +64,17 @@
 }
 
 .signup-panel .welcome {
-    font-size: 26px;
-    text-align: center;
-    margin-left: 0;
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
 }
+
 .signup-panel p {
-    font-size: 13px;
-    font-weight: 200;
-    margin-left: 25%;
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 25%;
 }
+
 .signup-panel .button {
-    margin-left: 20%;
+  margin-left: 20%;
 }
