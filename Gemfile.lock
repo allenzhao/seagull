@@ -170,7 +170,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer
   byebug
   cancan
   carrierwave (~> 0.10.0)

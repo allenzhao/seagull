@@ -1,45 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Seagull - Management Platform</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Seagull</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<main class="ui page grid">
-
-  <div class="row">
-    <div class="column">
-      <%= semantic_flash %>
-    </div>
-    <div class="column">
-      <% if notice.present? %>
-        <div class="ui positive message">
-          <div class="header">
-            <%= notice %>
-          </div>
-        </div>
-      <% end %>
-
-      <% if alert.present? %>
-        <div class="ui negative message">
-          <div class="header">
-            <%= alert %>
-          </div>
-        </div>
-      <% end %>
-
-      <div class="column">
-        <%= yield %>
-      </div>
-    </div>
-
-  </div>
-
-
-</main>
+<%= yield %>
 
 </body>
 </html>
