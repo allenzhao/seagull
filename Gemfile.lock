@@ -70,6 +70,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.3.0)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     foundation-rails (5.5.1.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -171,11 +174,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   byebug
   cancan
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
   devise
+  foundation-icons-sass-rails
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails

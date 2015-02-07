@@ -15,3 +15,40 @@
  *= require foundation_and_overrides
 
  */
+@import "foundation-icons";
+
+.alert-box{
+  margin-top: 1.25rem;
+}
+.signup-panel {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 30px;
+}
+.signup-panel i {
+    font-size: 30px;
+    line-height: 50px;
+    color: #999;
+}
+.signup-panel .input-box input, .signup-panel .input-box span{
+    height: 50px;
+}
+
+.signup-panel label {
+  font-size: 20px;
+}
+
+.signup-panel .welcome {
+    font-size: 26px;
+    text-align: center;
+    margin-left: 0;
+}
+.signup-panel p {
+    font-size: 13px;
+    font-weight: 200;
+    margin-left: 25%;
+}
+.signup-panel .button {
+    margin-left: 20%;
+}
