@@ -22,10 +22,23 @@
 en:
   hello: 'Hello world'
   superadmin: '超级管理员'
-  last_name: '姓'
-  first_name: '名'
-  phone_number: '电话号码'
-  title: '职位'
+  activerecord:
+    attributes:
+      team_member:
+        last_name: '姓'
+        first_name: '名'
+        phone_number: '电话号码'
+        title: '职位'
+      student:
+        student_number: '学号'
+        name: '姓名'
+        school: '学院'
+        grade: '年级'
+        student_class: '班级'
+        major: '专业'
+        sex: '性别'
+        phone_number: '电话号码'
+        dyned_class: 'DynEd 班级'
   views:
       pagination:
         first: "&laquo; 首页"
@@ -33,4 +46,20 @@ en:
         previous: "&laquo; 上一页"
         next: "下一页 &raquo;"
         truncate: "..."
+  enum:
+    male: '男'
+    female: '女'
+    site: '国际经济贸易学院'
+    bs: '国际商学院'
+    sfs: '外语学院'
+    sim: '信息学院'
+    sir: '国际关系学院'
+    spa: '公共管理学院'
+    scll: '中文学院'
+    sie: '保险学院'
+    sis: '英语学院'
+    ss: '统计学院'
+    sbf: '金融学院'
+    law: '法学院'
+
 

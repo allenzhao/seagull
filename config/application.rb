@@ -22,6 +22,13 @@ module Seagull
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.i18n.default_locale = :en
+    %w(
+      ActionDispatch::RequestId
+      Rack::ConditionalGet
+      Rack::Sendfile
+      Rack::ETag
+      ).each { |middleware| config.middleware.delete middleware }
   end
 end
 CFG = YAML.load_file(Rails.root.join('config', 'settings.yml'))[Rails.env] # load settings

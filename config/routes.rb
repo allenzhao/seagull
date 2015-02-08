@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+
+  end
+
   devise_for :users
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => 'page'
   end
-  get 'home/index'
 
+  namespace :api do
+    get 'startup', to: 'api#startup'
+    get 'records/start_up'
+    get 'records/student_check'
+    get 'records/check_in'
+    get 'records/keep_online'
+    get 'records/check_out'
+    get 'records/leave_early'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,7 +33,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  get 'team_members/import', to: 'team_members#import'
+  get 'team_members/import'
 
 
   resources :team_members, concerns: :paginatable
