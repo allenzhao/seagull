@@ -1,0 +1,8 @@
+<% unless @success.blank? %>
+$('#js-student').html('<%=j render(partial: 'table', locals: { students: Student.order('student_number DESC').page(1) }) %>');
+$('#js-global-modal').foundation('reveal', 'close');
+Messenger().success('<%= @success %>');
+<% end %>
+<% unless @error.blank? %>
+Messenger().error('<%= @error %>');
+<% end %>

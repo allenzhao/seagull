@@ -1,16 +1,17 @@
 <table>
   <thead>
   <tr>
-    <th>学号</th>
-    <th>姓名</th>
-    <th>性别</th>
-    <th>学院</th>
-    <th>年级</th>
-    <th>班级</th>
-    <th>专业</th>
-    <th>电话</th>
-    <th>DynEd 班级</th>
-    <th>Email</th>
+    <th width="80">学号</th>
+    <th width="100">姓名</th>
+    <th width="80">性别</th>
+    <th width="150">学院</th>
+    <th width="80">年级</th>
+    <th width="80">班级</th>
+    <th width="100">专业</th>
+    <th width="100">电话</th>
+    <th width="80">DynEd班级</th>
+    <th width="100">Email</th>
+    <th width="100">操作</th>
   </tr>
   </thead>
   <tbody>
@@ -18,14 +19,19 @@
     <tr>
       <td><%= student.student_number %></td>
       <td><%= student.name %></td>
-      <td><%= student.sex %></td>
-      <td><%= student.school %></td>
+      <td><%= enum_to_human student.sex %></td>
+      <td><%= enum_to_human student.school %></td>
       <td><%= student.grade %></td>
       <td><%= student.student_class %></td>
       <td><%= student.major %></td>
       <td><%= student.phone_number %></td>
       <td><%= student.dyned_class %></td>
       <td><%= student.email %></td>
+      <td>
+        <%= link_to '更新', edit_student_path(student.id), data: {remote: true} %>
+        |
+        <%= link_to '删除', student_path(student.id), data: {confirm: "确定删除#{student.name}吗?"}, method: :delete %>
+      </td>
     </tr>
   <% end %>
   </tbody>

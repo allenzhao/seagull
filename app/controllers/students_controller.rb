@@ -16,7 +16,6 @@ class StudentsController < ApplicationController
     else
       @error = show_error @student
     end
-    @students = Student.order('student_number DESC').page(1)
     render 'refresh_student'
   end
 
@@ -29,7 +28,6 @@ class StudentsController < ApplicationController
     else
       @error = show_error @student
     end
-    @students = Student.order('student_number DESC').page(1)
     render 'refresh_student'
   end
 
@@ -39,6 +37,7 @@ class StudentsController < ApplicationController
     else
       @error = show_error @student
     end
+    render 'refresh_student'
   end
 
   private

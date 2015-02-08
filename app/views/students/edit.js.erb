@@ -1,5 +1,5 @@
 $("#js-global-modal")
     .removeClass()
     .addClass("reveal-modal small")
-    .html("<%=j render :partial => 'form', locals: {team_member: @team_member}%>")
+    .html("<%=j render :partial => 'form', locals: {student: @student}%>")
     .foundation('reveal', 'open');

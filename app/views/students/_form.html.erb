@@ -1,0 +1,49 @@
+<div class="large-12 large-centered columns">
+  <%= form_for @student, remote: true do |f| %>
+    <div class="row collapse">
+      <%= f.label :student_number %>
+      <%= f.text_field :student_number %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :sex %>
+      <%= f.select :sex, enum_to_options(Student.sexes) %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :school %>
+      <%= f.select :school, enum_to_options(Student.schools) %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :grade %>
+      <%= f.text_field :grade %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :student_class %>
+      <%= f.text_field :student_class %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :major %>
+      <%= f.text_field :major %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :phone_number %>
+      <%= f.phone_field :phone_number %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :dyned_class %>
+      <%= f.text_field :dyned_class %>
+    </div>
+    <div class="row collapse">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <div class="row collapse">
+      <div class="large-12 large-centered columns">
+        <%= f.submit '保存', {class: 'button small radius'} %>
+      </div>
+    </div>
+  <% end %>
+</div>
