@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208061528) do
+ActiveRecord::Schema.define(version: 20150208104326) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -23,6 +23,21 @@ ActiveRecord::Schema.define(version: 20150208061528) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.integer  "student_number", limit: 4
+    t.integer  "school",         limit: 4
+    t.string   "grade",          limit: 255
+    t.string   "student_class",  limit: 255
+    t.string   "major",          limit: 255
+    t.integer  "sex",            limit: 4
+    t.string   "phone_number",   limit: 255
+    t.string   "dyned_class",    limit: 255
+    t.string   "email",          limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "team_members", force: :cascade do |t|
     t.string   "first_name",   limit: 255

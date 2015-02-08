@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
 
   resources :team_members, concerns: :paginatable
+  resources :students, concerns: :paginatable
 
   # Example resource route with options:
   #   resources :products do
