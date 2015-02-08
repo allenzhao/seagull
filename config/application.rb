@@ -24,3 +24,4 @@ module Seagull
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+CFG = YAML.load_file(Rails.root.join('config', 'settings.yml'))[Rails.env] # load settings

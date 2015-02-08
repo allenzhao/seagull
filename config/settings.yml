@@ -1,0 +1,13 @@
+development: &default
+  api_token:
+    records: recordstokenhere
+  allowed_domain: allenzhao.com
+
+test:
+  <<: *default
+
+production:
+  <<: *default
+  app_url:
+    medusa: http://medusa.huaxing.com
+    athena: http://athena.huaxing.com

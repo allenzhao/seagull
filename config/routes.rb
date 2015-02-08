@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'team_member/show'
+
+  get 'team_member/index'
+
+  get 'team_member/edit'
+
+  get 'team_member/update'
+
+  get 'team_member/create'
+
+  get 'team_member/destroy'
+
   devise_for :users
   get 'home/index'
 
@@ -17,6 +29,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :team_member
 
   # Example resource route with options:
   #   resources :products do
