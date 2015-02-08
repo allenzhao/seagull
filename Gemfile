@@ -19,7 +19,8 @@ gem 'cancan'
 gem 'devise'
 gem 'carrierwave', '~> 0.10.0'
 gem 'kaminari'
-gem 'paper_trail', '~> 4.0.0.beta'
+gem 'paper_trail'
+gem 'rolify'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
