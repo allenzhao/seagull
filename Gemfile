@@ -21,6 +21,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'kaminari'
 gem 'paper_trail'
 gem 'rolify'
+gem 'messengerjs-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   helper_method :get_member
+
+  def show_error(ar_object)
+    ar_object.errors.full_messages.join(' // ')
+  end
+
   def get_member
     TeamMember.where(user:current_user.id).first
   end

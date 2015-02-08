@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require messenger
+//= require messenger-theme-future
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

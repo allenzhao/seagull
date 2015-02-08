@@ -1,0 +1,8 @@
+<% unless @success.blank? %>
+$('#js-team-member').html('<%=j render(partial: 'table', locals: { team_members: @team_members }) %>');
+$('#js-global-modal').foundation('reveal', 'close');
+Messenger().success('<%= @success %>');
+<% end %>
+<% unless @error.blank? %>
+Messenger().error('<%= @error %>');
+<% end %>

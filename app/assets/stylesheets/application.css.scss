@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require messenger
+ *= require messenger-spinner
+ *= require messenger-theme-future
 
  */
 @import "foundation-icons";

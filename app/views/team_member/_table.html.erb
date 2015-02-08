@@ -1,0 +1,29 @@
+<table>
+  <thead>
+  <tr>
+    <th width="100">姓名</th>
+    <th width="150">Email</th>
+    <th width="150">电话</th>
+    <th width="150">职位</th>
+    <th width="150">级别</th>
+    <th width="150">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% team_members.each do |team_member| %>
+    <tr>
+      <td><%= team_member.full_name %></td>
+      <td><%= team_member.email %></td>
+      <td><%= team_member.phone_number %></td>
+      <td><%= team_member.title %></td>
+      <td><%= team_member.user.get_role_name %></td>
+      <td>
+        <%= link_to '更新', edit_team_member_path(team_member.id), data: {remote: true} %> |
+        <%= link_to '删除', team_member_path(team_member.id), data: {confirm: "确定删除#{team_member.full_name}吗?"}, method: :delete %>
+        |
+        <%= link_to '授权' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
