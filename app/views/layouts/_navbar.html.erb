@@ -3,13 +3,76 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">Seagull Platform</a></h1>
+          <h1><a href="/">Seagull Platform</a></h1>
         </li>
       </ul>
       <section class="top-bar-section">
         <ul class="left">
+
+          <li class="has-dropdown">
+            <a href="#">学生管理</a>
+            <ul class="dropdown">
+              <li><%= link_to '学生列表' %></li>
+              <li><%= link_to '导出学生' %></li>
+              <li><%= link_to '综合统计' %></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#">值班管理</a>
+            <ul class="dropdown">
+              <li><%= link_to '时间录入' %></li>
+              <li><%= link_to '值班安排' %></li>
+              <li><%= link_to '值班调整' %></li>
+              <li><%= link_to '值班签到' %></li>
+              <li><%= link_to '值班统计' %></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="#">工单管理</a>
+            <ul class="dropdown">
+              <li><%= link_to '工单列表' %></li>
+              <li><%= link_to '知识库' %></li>
+              <li><%= link_to '规则设定' %></li>
+              <li><%= link_to '失物处理' %></li>
+            </ul>
+          </li>
+
+          <% if current_user %>
+            <li class="has-dropdown">
+              <a href="#">成员管理</a>
+              <ul class="dropdown">
+                <li><%= link_to '成员列表', team_member_index_path %></li>
+                <li><%= link_to '考勤统计' %></li>
+                <li><%= link_to '通知管理' %></li>
+                <li><%= link_to '绩效管理' %></li>
+              </ul>
+            </li>
+          <% end %>
+
+          <li class="has-dropdown">
+            <a href="#">上课记录</a>
+            <ul class="dropdown">
+              <li><%= link_to '查看记录' %></li>
+              <li><%= link_to '批量处理' %></li>
+            </ul>
+          </li>
+
+          <% if current_user %>
+            <li class="has-dropdown">
+              <a href="#">系统管理</a>
+              <ul class="dropdown">
+                <li><%= link_to '用户管理' %></li>
+                <li><%= link_to '导入成员', team_member_import_path %></li>
+                <li><%= link_to '导入学生' %></li>
+                <li><%= link_to '绩效管理' %></li>
+              </ul>
+            </li>
+          <% end %>
         </ul>
         <ul class="right">
+          <li><a href="#">欢迎，<%= get_member.first_name %></a></li>
           <li><%= link_to('退出', destroy_user_session_path, :method => :delete) %></li>
           <li><%= link_to('修改密码', edit_registration_path(:user)) %></li>
         </ul>

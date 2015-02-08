@@ -16,4 +16,9 @@ class TeamMemberController < ApplicationController
 
   def destroy
   end
+
+  def import
+
+  end
+
 end
