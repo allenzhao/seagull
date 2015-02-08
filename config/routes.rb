@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  concern :paginatable do
+    get '(page/:page)', :action => :index, :on => :collection, :as => 'page'
+  end
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -18,10 +21,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  get 'team_member/import', to: 'team_member#import'
+  get 'team_members/import', to: 'team_members#import'
 
-  resources :team_member do
-  end
+
+  resources :team_members
 
   # Example resource route with options:
   #   resources :products do

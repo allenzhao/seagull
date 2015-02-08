@@ -16,11 +16,13 @@
       <td><%= team_member.email %></td>
       <td><%= team_member.phone_number %></td>
       <td><%= team_member.title %></td>
-      <td><%= team_member.user.get_role_name %></td>
+      <td><%= team_member.user.get_role_name if team_member.user.present? %></td>
       <td>
         <%= link_to '更新', edit_team_member_path(team_member.id), data: {remote: true} %> |
-        <%= link_to '删除', team_member_path(team_member.id), data: {confirm: "确定删除#{team_member.full_name}吗?"}, method: :delete %>
-        |
+        <% unless team_member.email == current_user.email %>
+          <%= link_to '删除', team_member_path(team_member.id), data: {confirm: "确定删除#{team_member.full_name}吗?"}, method: :delete %>
+          |
+        <% end %>
         <%= link_to '授权' %>
       </td>
     </tr>
