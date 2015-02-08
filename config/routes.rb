@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'team_members/import', to: 'team_members#import'
 
 
-  resources :team_members
+  resources :team_members, concerns: :paginatable
 
   # Example resource route with options:
   #   resources :products do

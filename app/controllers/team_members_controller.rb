@@ -5,7 +5,7 @@ class TeamMembersController < ApplicationController
   end
 
   def index
-    @team_members = TeamMember.includes(:user).order('id DESC')
+    @team_members = TeamMember.includes(:user).order('id DESC').page(params[:page])
     @team_member = TeamMember.new
   end
 
@@ -18,7 +18,7 @@ class TeamMembersController < ApplicationController
     else
       @error = show_error(@team_member)
     end
-    @team_members = TeamMember.includes(:user).all
+    @team_members = TeamMember.includes(:user).order('updated_at DESC').page(1)
     render 'refresh_team_member'
   end
 
@@ -29,7 +29,7 @@ class TeamMembersController < ApplicationController
     else
       @error = show_error(@team_member)
     end
-    @team_members = TeamMember.includes(:user).all
+    @team_members = TeamMember.includes(:user).order('updated_at DESC').page(1)
     render 'refresh_team_member'
   end
 
