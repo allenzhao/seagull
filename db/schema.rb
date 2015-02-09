@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208105044) do
+ActiveRecord::Schema.define(version: 20150209025751) do
+
+  create_table "class_rooms", force: :cascade do |t|
+    t.string   "IP",            limit: 255
+    t.string   "room_name",     limit: 255
+    t.string   "computer_name", limit: 255
+    t.string   "location",      limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "student_id",     limit: 4
+    t.integer  "class_room_id",  limit: 4
+    t.datetime "check_in_time"
+    t.datetime "check_out_time"
+    t.datetime "change_time"
+    t.datetime "checkout_time"
+    t.datetime "keep_time"
+    t.integer  "sign_in_status", limit: 4
+    t.integer  "action",         limit: 4
+    t.integer  "state",          limit: 4
+    t.string   "message",        limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "details", ["class_room_id"], name: "index_details_on_class_room_id", using: :btree
+  add_index "details", ["student_id"], name: "index_details_on_student_id", using: :btree
+
+  create_table "records", force: :cascade do |t|
+    t.integer  "student_id",     limit: 4
+    t.integer  "required_times", limit: 4
+    t.integer  "real_times",     limit: 4
+    t.integer  "leave_times",    limit: 4
+    t.integer  "error_times",    limit: 4
+    t.integer  "total_time",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "records", ["student_id"], name: "index_records_on_student_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -23,6 +64,15 @@ ActiveRecord::Schema.define(version: 20150208105044) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "student_id", limit: 4
+    t.integer  "weekday",    limit: 4
+    t.integer  "lesson",     limit: 4
+    t.integer  "location",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -52,6 +102,16 @@ ActiveRecord::Schema.define(version: 20150208105044) do
   end
 
   add_index "team_members", ["user_id"], name: "index_team_members_on_user_id", using: :btree
+
+  create_table "term_plans", force: :cascade do |t|
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "weekday",    limit: 4
+    t.integer  "lesson",     limit: 4
+    t.integer  "location",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -89,5 +149,21 @@ ActiveRecord::Schema.define(version: 20150208105044) do
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
+  create_table "week_plans", force: :cascade do |t|
+    t.datetime "start_checkin_time"
+    t.datetime "late_checkin_time"
+    t.datetime "end_checkin_time"
+    t.datetime "start_checkout_time"
+    t.datetime "end_checkout_time"
+    t.integer  "weekday",             limit: 4
+    t.integer  "lesson",              limit: 4
+    t.integer  "location",            limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_foreign_key "details", "class_rooms"
+  add_foreign_key "details", "students"
+  add_foreign_key "records", "students"
   add_foreign_key "team_members", "users"
 end
