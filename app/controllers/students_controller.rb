@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
   def index
     @students = Student.order('student_number DESC').page(params[:page])
     @student = Student.new

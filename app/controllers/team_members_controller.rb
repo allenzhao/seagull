@@ -7,6 +7,11 @@ class TeamMembersController < ApplicationController
   def index
     @team_members = TeamMember.includes(:user).order('id DESC').page(params[:page])
     @team_member = TeamMember.new
+    #TODO: 增加权限控制
+    respond_to do |format|
+      format.html
+      format.csv { send_csv_data TeamMember.to_csv, "team_members-#{DateTime.current.to_s(:number)}" }
+    end
   end
 
   def edit
@@ -50,6 +55,6 @@ class TeamMembersController < ApplicationController
   end
 
   def team_member_params
-    params.require(:team_member).permit( :first_name, :last_name, :phone_number, :email, :title)
+    params.require(:team_member).permit(:first_name, :last_name, :phone_number, :email, :title)
   end
 end

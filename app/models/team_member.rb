@@ -1,4 +1,5 @@
 class TeamMember < ActiveRecord::Base
+  include Exportable
   validates :email, uniqueness: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: 'is not correct'}
   belongs_to :user, touch: true
 

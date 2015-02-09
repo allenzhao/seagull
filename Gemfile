@@ -22,6 +22,7 @@ gem 'kaminari'
 gem 'paper_trail'
 gem 'rolify'
 gem 'messengerjs-rails'
+gem 'roo'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   helper_method :get_member
+  include ApplicationHelper
 
   def show_error(ar_object)
     ar_object.errors.full_messages.join(' // ')
