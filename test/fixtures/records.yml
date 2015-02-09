@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  required_times: 1
+  real_times: 1
+  leave_times: 1
+  error_times: 1
+  total_time: 1
+
+two:
+  student_id: 
+  required_times: 1
+  real_times: 1
+  leave_times: 1
+  error_times: 1
+  total_time: 1

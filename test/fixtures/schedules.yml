@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: 
+  weekday: 1
+  lesson: 1
+  location: 1
+
+two:
+  student: 
+  weekday: 1
+  lesson: 1
+  location: 1

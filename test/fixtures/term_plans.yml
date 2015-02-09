@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2015-02-09 10:50:58
+  end_time: 2015-02-09 10:50:58
+  weekday: 1
+  lesson: 1
+  location: 1
+
+two:
+  start_time: 2015-02-09 10:50:58
+  end_time: 2015-02-09 10:50:58
+  weekday: 1
+  lesson: 1
+  location: 1

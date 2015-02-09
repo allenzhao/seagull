@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 
+  class_room_id: 
+  check_in_time: 2015-02-09 10:57:51
+  check_out_time: 2015-02-09 10:57:51
+  change_time: 2015-02-09 10:57:51
+  checkout_time: 2015-02-09 10:57:51
+  keep_time: 2015-02-09 10:57:51
+  sign_in_status: 1
+  action: 1
+  state: 1
+  message: MyString
+
+two:
+  student_id: 
+  class_room_id: 
+  check_in_time: 2015-02-09 10:57:51
+  check_out_time: 2015-02-09 10:57:51
+  change_time: 2015-02-09 10:57:51
+  checkout_time: 2015-02-09 10:57:51
+  keep_time: 2015-02-09 10:57:51
+  sign_in_status: 1
+  action: 1
+  state: 1
+  message: MyString

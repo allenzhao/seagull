@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_checkin_time: 2015-02-09 10:55:07
+  late_checkin_time: 2015-02-09 10:55:07
+  end_checkin_time: 2015-02-09 10:55:07
+  start_checkout_time: 2015-02-09 10:55:07
+  end_checkout_time: 2015-02-09 10:55:07
+  weekday: 1
+  lesson: 1
+  location: 1
+
+two:
+  start_checkin_time: 2015-02-09 10:55:07
+  late_checkin_time: 2015-02-09 10:55:07
+  end_checkin_time: 2015-02-09 10:55:07
+  start_checkout_time: 2015-02-09 10:55:07
+  end_checkout_time: 2015-02-09 10:55:07
+  weekday: 1
+  lesson: 1
+  location: 1
