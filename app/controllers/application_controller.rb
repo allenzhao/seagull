@@ -5,12 +5,19 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   helper_method :get_member
   include ApplicationHelper
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show_error(ar_object)
     ar_object.errors.full_messages.join(' // ')
   end
 
   def get_member
-    TeamMember.where(user:current_user.id).first
+    TeamMember.where(user: current_user.id).first
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :email, :password, :remember_me) }
   end
 end

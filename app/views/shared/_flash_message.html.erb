@@ -1,0 +1,6 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <% icon = content_tag :i, icon_for(name).html_safe, {class: 'iconfont'} %>
+    <%= content_tag :div, icon + msg, {class: "alert #{alert_class_for name}", role: 'alert'} %>
+  <% end %>
+<% end %>

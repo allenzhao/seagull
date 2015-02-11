@@ -6,8 +6,6 @@
 
 <body id="<%= "#{controller_name}-#{action_name}" %>" class="mo-<%= module_name %>">
 <%= render partial: 'shared/navbar' %>
-<div class="container">
-  <%= yield %>
-</div>
+<%= yield %>
 </body>
 </html>

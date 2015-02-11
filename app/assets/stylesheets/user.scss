@@ -15,12 +15,13 @@
 }
 
 #login-panel .header {
-  height: 100px;
+  height: 160px;
   border-radius: 8px 8px 0 0;
   background: #f8f8f8;
   border-bottom: 3px solid #f5f5f5;
   text-align: center;
   line-height: 100px;
+  padding-top: 30px;
 }
 
 #login-panel .box {
@@ -47,4 +48,16 @@
   left: 50%;
   margin: 250px 0 0 -200px;
   color: #bbb;
+}
+
+#login-panel .alert {
+  text-align: center;
+}
+
+#login-panel .alert > i {
+  padding-right: 1px;
+}
+
+#login-panel .btn {
+  width: 100%;
 }

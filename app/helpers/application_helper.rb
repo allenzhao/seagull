@@ -14,6 +14,24 @@ module ApplicationHelper
               :disposition => "attachment; filename=#{filename}.csv"
   end
 
+  def icon_for(flash_type)
+    {
+        :success => '&#xe613;',
+        :error => '&#xe614;',
+        :alert => '&#xe618;',
+        :notice => '&#xe616;'
+    }[flash_type.to_sym] || flash_type.to_s
+  end
+
+  def alert_class_for(flash_type)
+    {
+        :success => 'alert-success',
+        :error => 'alert-danger',
+        :alert => 'alert-warning',
+        :notice => 'alert-info'
+    }[flash_type.to_sym] || flash_type.to_s
+  end
+
   def ilink_to(text, path, options = {}) #带iconfont的lint_to
     icon_class = options[:icon]
     options.delete(:icon)
