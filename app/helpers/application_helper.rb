@@ -13,4 +13,16 @@ module ApplicationHelper
               :type => 'text/csv; charset=iso-8859-1; header=present',
               :disposition => "attachment; filename=#{filename}.csv"
   end
+
+  def ilink_to(text, path, options = {}) #带iconfont的lint_to
+    icon_class = options[:icon]
+    options.delete(:icon)
+    link_to path, options do
+      content_tag(:i, '', class: "fa fa-#{icon_class}") + content_tag(:span, " #{text}")
+    end
+  end
+
+  def module_name #返回controller name (如果controller在目录中，则返回该目录名)
+    controller_path.split('/')[0]
+  end
 end
