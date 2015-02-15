@@ -20,7 +20,7 @@ module ApplicationHelper
         :error => '&#xe614;',
         :alert => '&#xe618;',
         :notice => '&#xe616;'
-    }[flash_type.to_sym] || flash_type.to_s
+    }[flash_type.to_sym] || '&#xe616;'
   end
 
   def alert_class_for(flash_type)

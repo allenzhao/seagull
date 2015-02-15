@@ -1,8 +1,19 @@
-<div id="welcome-container">
-  <h1>欢迎回来, <%= get_member.first_name %></h1>
+<% if get_member.present? %>
+  <div id="welcome-container">
+    <h1>欢迎回来, <%= get_member.first_name %></h1>
 
-  <p>Seagull 是基于 Ruby on Rails 开发的学生团队综合事务管理系统</p>
-</div>
-<div class="container">
-  <h1>数据统计在这里</h1>
-</div>
+    <p>Seagull 是基于 Ruby on Rails 开发的学生团队综合事务管理系统</p>
+  </div>
+  <div class="container">
+    <h1>数据统计在这里</h1>
+  </div>
+<% else %>
+  <div id="container">
+    <h1>请绑定帐号</h1>
+
+    <p>由于您的帐号未绑定到团队成员中，您的帐号暂时被屏蔽。
+
+      <p>请联系管理员进行绑定 或 <%= link_to('点此退出登录', destroy_user_session_path, :method => :delete) %></p>
+    </p>
+  </div>
+<% end %>

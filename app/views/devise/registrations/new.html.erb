@@ -1,52 +1,38 @@
-<div class="row login-container">
-  <div class="large-8 large-centered columns">
-    <div class="signup-panel">
-      <div class="row">
-        <div class="row flash">
-          <%= devise_error_messages! %>
-        </div>
-        <div class="large-6 columns logo">
-          <%= image_tag 'seagull.png' %>
-          <p class="welcome"> 欢迎您注册 Seagull</p>
-        </div>
-        <div class="large-6 columns login">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <div class="row collapse input-box">
-              <div class="small-2 columns">
-                <span class="prefix"><i class="fi-mail"></i></span>
-              </div>
-              <div class="small-10 columns">
-                <%= f.email_field :email, {autofocus: true, placeholder: '请输入您的E-mail'} %>
-              </div>
-            </div>
+<div id="login-panel" class="animated fadeInLeft">
+  <div class="header">
+    <%= image_tag 'seagull.png' %>
+  </div>
+  <%= render :partial => 'shared/flash_message' %>
+  <!--<div class="alert alert-info" role="alert">-->
 
-            <div class="row collapse input-box">
-              <div class="small-2 columns">
-                <span class="prefix"><i class="fi-lock"></i></span>
-              </div>
-              <div class="small-10 columns">
-                <%= f.password_field :password, {autocomplete: 'off', placeholder: "请输入密码,(不少于#{@minimum_password_length}个字符 )"} %>
-              </div>
-            </div>
+  <!--<p><span class="iconfont"><%= icon_for('notice').html_safe %></span>-->
+  <!--欢迎您注册Seagull。</p>-->
 
-            <div class="row collapse input-box">
-              <div class="small-2 columns">
-                <span class="prefix"><i class="fi-lock"></i></span>
-              </div>
-              <div class="small-10 columns">
-                <%= f.password_field :password_confirmation, {autocomplete: 'off', placeholder: '请确认密码'} %>
-              </div>
-            </div>
-
-            <div class="row collapse">
-              <div class="small-6 small-centered columns">
-                <%= f.submit '注册', {class: 'button radius'} %>
-              </div>
-              <%= render 'devise/shared/links' %>
-            </div>
-          <% end %>
+  <!--<p>请使用您的 <%= CFG['allowed_domain'] %>邮箱注册以便接收激活信件。</p>-->
+  <!--</div>-->
+  <div class="box">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <div class="input-group">
+          <%= f.text_field :login, {autofocus: true, class: 'form-control', placeholder: '您的企业 Email 帐号', required: true} %>
+          <span id="login-domain" class="input-group-addon">@<%= CFG['allowed_domain'] %></span>
         </div>
       </div>
-    </div>
+
+      <div class="form-group">
+        <%= f.password_field :password, {autocomplete: 'off', class: 'form-control', placeholder: "请输入密码,(不少于#{@minimum_password_length}个字符 )"} %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, {autocomplete: 'off', class: 'form-control', placeholder: '请确认密码'} %>
+      </div>
+      <div class="form-group">
+        <hr/>
+        <%= f.submit '注册', class: 'btn btn-lg btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="footer">
+    &copy; 2015 Seagull Platform all rights reserved.<br>
   </div>
 </div>

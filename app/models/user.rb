@@ -10,9 +10,23 @@ class User < ActiveRecord::Base
     I18n.translate self.roles.first.name
   end
 
+  def login=(login)
+    'here_first'
+    @login = login
+    self.email = "#{@login}@#{CFG['allowed_domain']}"
+  end
+
+  def login
+    'then here'
+    @login || self.email
+  end
+
+  protected
   def self.find_first_by_auth_conditions(warden_conditions)
     warden_conditions[:email] = "#{warden_conditions.delete(:login)}@#{CFG['allowed_domain']}"
     super(warden_conditions)
   end
+
+
 
 end

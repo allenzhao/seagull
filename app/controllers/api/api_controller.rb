@@ -1,6 +1,7 @@
 class Api::ApiController < ApplicationController
   before_action :allow_cors
   before_action :require_system
+  before_action :set_classroom
   skip_before_action :authenticate_user!
   # before_action :api_logger
 
@@ -10,7 +11,7 @@ class Api::ApiController < ApplicationController
         CFG['api_token']['records'] => :seagull
     }
     if token.blank? || friends[token].nil?
-      render json: {error: 'You need to auth yourself.'}, status: :unauthorized
+      render json: {error: '认证错误'}, status: :unauthorized
     end
   end
 
@@ -20,7 +21,17 @@ class Api::ApiController < ApplicationController
   end
 
   def startup
-    render json: {data: 'haha'}
+    if @class_room.present?
+      @class_room.detail.present? ? render 'api/current_status' : render 'api/startup'
+    else
+      render json: {error: '不允许在当前机器签到，请联系管理员。'}, status: :bad_request
+    end
+  end
+
+  protected
+
+  def set_classroom
+    @class_room = ClassRoom.where(IP: request.remote_ip).first.present?
   end
 
   private
