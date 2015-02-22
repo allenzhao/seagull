@@ -22,7 +22,7 @@ class Api::ApiController < ApplicationController
 
   def startup
     if @class_room.present?
-      @class_room.detail.present? ? render 'api/current_status' : render 'api/startup'
+      @class_room.detail.present? ? render('api/current_status'): render('api/startup')
     else
       render json: {error: '不允许在当前机器签到，请联系管理员。'}, status: :bad_request
     end
