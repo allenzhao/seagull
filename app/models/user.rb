@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  rolify
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
   allowed_domain = "@#{CFG['allowed_domain']}"
