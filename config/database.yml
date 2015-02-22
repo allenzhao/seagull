@@ -27,4 +27,4 @@ test:
 production:
   <<: *default
   database: seagull_production
-  password: ilovemike
+  password: ilovesuits
