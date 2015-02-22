@@ -4,11 +4,32 @@
   <%= render partial: 'shared/head' %>
 </head>
 
-<body id="<%= "#{controller_name}-#{action_name}" %>" class="mo-<%= module_name %>">
-<%= render partial: 'shared/navbar' %>
+<body id="<%= "#{controller_name}-#{action_name}" %>" class="no-skin mo-<%= module_name %>">
+	<div class="navbar" id="navbar">
+		<%= render partial: 'shared/navbar' %>
+    </div>
 <%= render partial: 'shared/flash_message' %>
-<div class="container">
-  <%= yield %>
-</div>
+<div class="main-container" id="main-container">
+     <div class="sidebar responsive" id="sidebar">
+     	<%= render partial: 'shared/side_bar' %>
+     </div>
+  
+     <div class="main-content">
+      <div class="breadcrumbs">
+      	     	<%= render partial: 'shared/breadcrumbs' %>
+      </div>
+   
+      <div class="page-content">
+        <!-- setting box goes here if needed -->
+        <div class="row">
+          <div class="col-xs-12">
+          	<%= yield %>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+
+      </div><!-- /.page-content -->
+     </div><!-- /.main-content -->
+	 <%= render partial: 'shared/footer' %>
+   </div><!-- /.main-container -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-class Api::RecordsController < ApiController
+class Api::RecordsController < Api::ApiController
 
   def student_check
   end
