@@ -1,7 +1,11 @@
 development: &default
   api_token:
-    records: record1stokenhere
+    records: recordstokenhere
   allowed_domain: allenzhao.com
+  allowed_location:
+    n2:
+      start: 1
+      end: 10
 
 test:
   <<: *default

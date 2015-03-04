@@ -4,3 +4,7 @@
     <%= render partial: 'table', locals: {students: @students} %>
   </div>
 </div>
+<h2>新增一个学生</h2>
+<div class="col-xs-12">
+  <%= render partial: 'form', locals: {student: Student.new} %>
+</div>
