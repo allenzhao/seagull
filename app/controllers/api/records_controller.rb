@@ -1,8 +1,5 @@
 class Api::RecordsController < Api::ApiController
 
-  def student_check
-  end
-
   def check_in
   end
 

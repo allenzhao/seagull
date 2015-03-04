@@ -5,4 +5,11 @@ class Student < ActiveRecord::Base
   # %w{经贸,商学,外语,信息,国关,公管,中文,保险,英语,统计,金融,法学}
   validates :student_number, uniqueness: {message: '不允许重复'}
   has_many :details
+  has_one :schedule
+
+  #todo:现在不允许换课,要用detail 来处理,再思考
+
+  def allow_checkin?
+    Time.now.wday == self.schedule.weekday ? true : false
+  end
 end
