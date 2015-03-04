@@ -3,7 +3,7 @@ class ClassRoom < ActiveRecord::Base
   has_many :details
 
   def allowed_location?
-
+    location = CFG['allowed_location'][self.location.downcase]
   end
 
 end

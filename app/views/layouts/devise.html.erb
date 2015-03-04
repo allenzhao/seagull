@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-    <%= render partial: 'shared/head' %>
- </head>
+<head>
+  <%= render partial: 'shared/head' %>
+</head>
 
- <body id="<%= "#{controller_name}-#{action_name}" %>" class="mo-<%= module_name %> login-layout blur-login">
- 
-  <div class="main-container">
-   <div class="main-content">
+<body id="<%= "#{controller_name}-#{action_name}" %>" class="mo-<%= module_name %> login-layout blur-login">
+
+<div class="main-container">
+  <div class="main-content">
     <div class="row">
-     <div class="col-sm-10 col-sm-offset-1">
-     	<%= yield %>
-     </div><!-- /.col -->
-    </div><!-- /.row -->
-   </div><!-- /.main-content -->
-  </div><!-- /.main-container -->
+      <div class="col-sm-10 col-sm-offset-1">
+        <%= yield %>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.main-content -->
+</div>
+<!-- /.main-container -->
 
 
- </body>
+</body>
 </html>

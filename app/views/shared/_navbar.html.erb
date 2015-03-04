@@ -1,84 +1,47 @@
-<% if current_user %>
-  <header>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-bar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to(content_tag(:span, '&#xe623;'.html_safe, class: 'iconfont')+'Seagull', root_path, class: 'navbar-brand') %>
-        </div>
+<div id="navbar" class="navbar navbar-default">
+  <div id="navbar-container" class="navbar-container">
 
-        <div class="collapse navbar-collapse" id="nav-bar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">学生管理<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><%= link_to '学生列表', students_path %></li>
-                <li><a href="#">导出学生</a></li>
-                <li><a href="#">出勤统计</a></li>
-                <li class="divider"></li>
-                <li><a href="#">上课记录</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">值班管理<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">时间录入</a></li>
-                <li><a href="#">值班安排</a></li>
-                <li><a href="#">值班调整</a></li>
-                <li><a href="#">值班签到</a></li>
-                <li class="divider"></li>
-                <li><a href="#">值班统计</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">团队管理<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <%= link_to '成员列表', team_members_path %>
-                </li>
-                <li><a href="#">考勤统计</a></li>
-                <li><a href="#">通知管理</a></li>
-                <li><a href="#">绩效管理</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">上课记录<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">查看记录</a></li>
-                <li><a href="#">记录处理</a></li>
-              </ul>
-            </li>
+    <!-- toggle buttons are here or inside brand container -->
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统管理<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">导入学生</a></li>
-                <li><a href="#">导入成员</a></li>
-                <li><a href="#">教室管理</a></li>
-                <li class="divider"></li>
-                <li><a href="#">系统设置</a></li>
-              </ul>
-            </li>
+    <div class="navbar-header pull-left">
+      <a href="#" class="navbar-brand">
+        <small>
+          <i class="fa fa-cloud"></i>
+          Seagull Platform
+        </small>
+      </a>
+    </div>
+    <!-- /.navbar-header -->
+
+
+    <div class="navbar-buttons navbar-header pull-right ">
+      <ul class="nav ace-nav">
+        <li class="light-blue">
+          <a data-toggle="dropdown" href="#" class="dropdown-toggle" aria-expanded="false">
+            <%= image_tag('avatar2.png', {class: 'nav-user-photo'}) %>
+            <span class="user-info">
+									<small>Welcome,</small>
+              <%= get_member.first_name %>
+            </span>
+            <i class="ace-icon fa fa-caret-down"></i>
+          </a>
+          <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+            <li><a href="#">个人信息</a></li>
+            <li><a href="#">账户管理</a></li>
+            <li class="divider"></li>
+            <li><%= link_to('退出登录', destroy_user_session_path, :method => :delete) %></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Welcome, <%= get_member.first_name %></a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">帐号管理<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">个人信息</a></li>
-                <li><a href="#">账户管理</a></li>
-                <li class="divider"></li>
-                <li><%= link_to('退出登录', destroy_user_session_path, :method => :delete) %></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-buttons -->
+
+
+    <nav class="navbar-menu pull-left">
+      <!-- optional menu & form inside navbar -->
     </nav>
-  </header>
-<% end %>
+    <!-- /.navbar-menu -->
+
+  </div>
+  <!-- /.navbar-container -->
+</div><!-- /.navbar -->

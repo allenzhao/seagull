@@ -21,17 +21,17 @@ class Api::ApiController < ApplicationController
   end
 
   def startup
-    if @class_room.present?
-      @class_room.detail.present? ? render('api/current_status'): render('api/startup')
+    if @class_room.present? && @class_room.allowed_location?
+      @class_room.details.last.present? ? render('api/current_status') : render('api/startup')
     else
-      render json: {error: '不允许在当前机器签到，请联系管理员。'}, status: :bad_request
+      render json: {status: 403, message: '当前时间不允许在当前机器签到，请联系管理员。', ip: request.remote_ip}, status: :forbidden
     end
   end
 
   protected
 
   def set_classroom
-    @class_room = ClassRoom.where(IP: request.remote_ip).first.present?
+    @class_room = ClassRoom.where(IP: request.remote_ip).first
   end
 
   private

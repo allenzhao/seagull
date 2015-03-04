@@ -43,4 +43,10 @@ module ApplicationHelper
   def module_name #返回controller name (如果controller在目录中，则返回该目录名)
     controller_path.split('/')[0]
   end
+
+  def menu_link_to(text, path, options={})
+    link_to path, options do
+      content_tag(:i, '', class: 'menu-icon fa fa-caret-right') + content_tag(:span, "#{text}") + content_tag(:b, '', class: 'arrow')
+    end
+  end
 end

@@ -15,5 +15,8 @@
 //= require messenger
 //= require messenger-theme-future
 //= require bootstrap
+//= require ace
+//= require ace-elements
+//= require ace-extra
 //= require_tree .
 

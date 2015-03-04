@@ -1,0 +1,150 @@
+<div id="sidebar" class="sidebar responsive">
+  <script type="text/javascript">
+    try {
+      ace.settings.check('sidebar', 'fixed')
+    } catch (e) {
+    }
+  </script>
+
+
+  <ul class="nav nav-list">
+    <li class="">
+      <a href=<%= root_path %>>
+        <i class="menu-icon fa fa-tachometer"></i>
+        <span class="menu-text"> 控制面板 </span>
+      </a>
+
+      <b class="arrow"></b>
+    </li>
+
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-users"></i>
+							<span class="menu-text">
+                学生管理
+							</span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+
+        <li class="">
+          <%= menu_link_to('学生列表', students_path) %>
+        </li>
+
+        <li class="">
+          <%= menu_link_to('导入学生', '#') %>
+        </li>
+
+        <li class="">
+          <%= menu_link_to('导出学生', '#') %>
+        </li>
+
+        <li class="">
+          <%= menu_link_to('上课记录', '#') %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-desktop"></i>
+        <span class="menu-text">值班管理</span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="">
+          <%= menu_link_to('时间录入', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('值班安排', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('值班调整', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('值班签到', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('值班统计', '#') %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-sitemap"></i>
+        <span class="menu-text"> 团队管理 </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="">
+          <%= menu_link_to('成员列表', team_members_path) %>
+        </li>
+        <li class="">
+          <%= menu_link_to('考勤统计', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('通知管理', '#') %>
+        </li>
+        <li class="">
+          <%= menu_link_to('绩效管理', '#') %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-institution"></i>
+        <span class="menu-text"> 上课记录 </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="">
+          <%= menu_link_to('查看记录', team_members_path) %>
+        </li>
+        <li class="">
+          <%= menu_link_to('记录处理', '#') %>
+        </li>
+      </ul>
+    </li>
+
+    <li class="">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-wrench"></i>
+        <span class="menu-text"> 系统管理 </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="">
+          <%= menu_link_to('教室管理', team_members_path) %>
+        </li>
+        <li class="">
+          <%= menu_link_to('系统设置', '#') %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- /.nav-list -->
+
+
+</div>
