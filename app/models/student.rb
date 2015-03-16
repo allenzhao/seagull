@@ -7,6 +7,7 @@ class Student < ActiveRecord::Base
   has_many :details
   has_one :schedule
   has_many :error_logs
+  has_many :issues
 
   #todo:现在不允许换课,要用detail 来处理,再思考
 

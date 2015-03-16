@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_student, except: [:index,:create]
+
   def index
     @students = Student.order('student_number DESC').page(params[:page])
     @student = Student.new

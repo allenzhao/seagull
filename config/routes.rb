@@ -38,11 +38,12 @@ Rails.application.routes.draw do
 
   resources :team_members, concerns: :paginatable
   resources :students, concerns: :paginatable
+  resources :issues, concerns: :paginatable
 
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
+  #       get 'short'ß
   #       post 'toggle'
   #     end
   #

@@ -4,19 +4,18 @@ class User < ActiveRecord::Base
   allowed_domain = "@#{CFG['allowed_domain']}"
   validates :email, format: {with: /#{allowed_domain}/, message: '验证失败,不是内部用户'}
   attr_accessor :login
+  has_one :team_member
 
   def get_role_name
-    I18n.translate self.roles.first.name
+    ''
   end
 
   def login=(login)
-    'here_first'
     @login = login
     self.email = "#{@login}@#{CFG['allowed_domain']}"
   end
 
   def login
-    'then here'
     @login || self.email
   end
 
@@ -25,7 +24,5 @@ class User < ActiveRecord::Base
     warden_conditions[:email] = "#{warden_conditions.delete(:login)}@#{CFG['allowed_domain']}"
     super(warden_conditions)
   end
-
-
 
 end

@@ -1,9 +1,9 @@
 <div id="sidebar" class="sidebar responsive">
   <script type="text/javascript">
-    try {
-      ace.settings.check('sidebar', 'fixed')
-    } catch (e) {
-    }
+      try {
+          ace.settings.check('sidebar', 'fixed')
+      } catch (e) {
+      }
   </script>
 
 
@@ -19,9 +19,7 @@
     <li class="">
       <a href="#" class="dropdown-toggle">
         <i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text">
-                事务处理
-							</span>
+        <span class="menu-text">事务处理</span>
 
         <b class="arrow fa fa-angle-down"></b>
       </a>
@@ -31,7 +29,7 @@
       <ul class="submenu">
 
         <li class="">
-          <%= menu_link_to('工单列表', '#') %>
+          <%= menu_link_to('工单列表', issues_path) %>
         </li>
 
         <li class="">

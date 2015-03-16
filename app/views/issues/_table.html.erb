@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>标题</th>
+    <th>描述</th>
+    <th>负责人</th>
+    <th>状态</th>
+    <th>创建于</th>
+    <th>更新于</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% issues.each do |issue| %>
+      <tr>
+        <td><%= issue.title %></td>
+        <td><%= issue.description %></td>
+        <td><%= issue.user.team_member.full_name %></td>
+        <td><%= issue.status %></td>
+        <td><%= issue.created_at %></td>
+        <td><%= issue.updated_at %></td>
+        <td>
+          <%= link_to '更新', edit_issue_path(issue.id), data: {remote: true} %>
+          |
+          <%= link_to '删除', issue_path(issue.id), data: {confirm: "确定删除#{issue.title}标题的Issue吗？"}, method: :delete %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
