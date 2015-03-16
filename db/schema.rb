@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209025751) do
+ActiveRecord::Schema.define(version: 20150315153939) do
 
   create_table "class_rooms", force: :cascade do |t|
     t.string   "IP",            limit: 255
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20150209025751) do
 
   add_index "details", ["class_room_id"], name: "index_details_on_class_room_id", using: :btree
   add_index "details", ["student_id"], name: "index_details_on_student_id", using: :btree
+
+  create_table "error_logs", force: :cascade do |t|
+    t.integer  "student_id", limit: 4
+    t.string   "ip",         limit: 255
+    t.integer  "status",     limit: 4
+    t.string   "detail",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "records", force: :cascade do |t|
     t.integer  "student_id",     limit: 4

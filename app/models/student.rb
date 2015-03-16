@@ -6,6 +6,7 @@ class Student < ActiveRecord::Base
   validates :student_number, uniqueness: {message: '不允许重复'}
   has_many :details
   has_one :schedule
+  has_many :error_logs
 
   #todo:现在不允许换课,要用detail 来处理,再思考
 

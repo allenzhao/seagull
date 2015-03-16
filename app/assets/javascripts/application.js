@@ -18,5 +18,6 @@
 //= require ace
 //= require ace-elements
 //= require ace-extra
+//= require bootbox
 //= require_tree .
 

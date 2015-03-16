@@ -1,5 +1,4 @@
-$("#js-global-modal")
-    .removeClass()
-    .addClass("reveal-modal small")
-    .html("<%=j render :partial => 'form', locals: {student: @student}%>")
-    .foundation('reveal', 'open');
+bootbox.dialog({
+    message: "<%=j render :partial => 'form', locals: {student: @student}%>",
+    title: "编辑学生"
+});
