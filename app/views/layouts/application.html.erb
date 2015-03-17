@@ -15,26 +15,26 @@
 
   <div class="main-content">
 
-      <div class="breadcrumbs" id="breadcrumbs">
-        <%= render partial: 'shared/breadcrumbs' %>
-      </div>
-      <div class="page-header">
-        <%= render partial: 'shared/page_header' %>
-      </div>
-      <div class="page-content">
-        <!-- setting box goes here if needed -->
-        <div class="row">
-          <div class="col-xs-12">
-            <%= render partial: 'shared/flash_message' %>
-            <%= yield %>
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.page-content -->
+    <div class="breadcrumbs" id="breadcrumbs">
+      <%= render partial: 'shared/breadcrumbs' %>
     </div>
+    <div class="page-header">
+      <%= render partial: 'shared/page_header' %>
+    </div>
+    <div class="page-content">
+      <!-- setting box goes here if needed -->
+      <div class="row">
+        <div class="col-xs-12">
+          <%= render partial: 'shared/flash_message' %>
+          <%= yield %>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.page-content -->
+  </div>
   <!-- /.main-content -->
   <%= render partial: 'shared/footer' %>
 </div>

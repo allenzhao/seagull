@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   get 'team_members/import'
+  get 'issues/my_issues'
 
 
   resources :team_members, concerns: :paginatable

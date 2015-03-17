@@ -13,7 +13,13 @@ class ApplicationController < ActionController::Base
   end
 
   def get_member
-    TeamMember.where(user: current_user.id).first
+    team_member = TeamMember.find_by_user_id(current_user.id)
+    unless team_member.present?
+      team_member = TeamMember.find_by_email(current_user.email)
+      team_member.user_id = current_user.id
+      team_member.save
+    end
+    team_member
   end
 
   #

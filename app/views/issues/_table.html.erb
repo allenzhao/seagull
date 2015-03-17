@@ -15,7 +15,7 @@
       <tr>
         <td><%= issue.title %></td>
         <td><%= issue.description %></td>
-        <td><%= issue.user.team_member.full_name %></td>
+        <td><%= issue.team_member.full_name || '' %></td>
         <td><%= issue.status %></td>
         <td><%= issue.created_at %></td>
         <td><%= issue.updated_at %></td>

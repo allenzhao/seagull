@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
 
-  before_action :set_issue, except: [:index]
+  before_action :set_issue, except: [:index, :create, :my_issues]
 
   def index
     @issues = Issue.order('updated_at DESC').page(params[:page])
@@ -8,6 +8,12 @@ class IssuesController < ApplicationController
   end
 
   def show
+  end
+
+  def my_issues
+    @issues = Issue.where(team_member_id: current_user.team_member.id).page(params[:page])
+    @issue = Issue.new
+    render 'index'
   end
 
   def create
@@ -48,7 +54,7 @@ class IssuesController < ApplicationController
   end
 
   def issue_params
-    params.require(:student).permit(:title, :description, :user_id, :student_id, :status)
+    params.require(:issue).permit(:title, :description, :team_member_id, :student_id, :status)
   end
 
 end

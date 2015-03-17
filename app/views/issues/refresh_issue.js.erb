@@ -1,0 +1,8 @@
+<% unless @success.blank? %>
+$('#js-issues').html('<%=j render(partial: 'table', locals: { issues: Issue.order('updated_at DESC').page(1) }) %>');
+bootbox.hideAll();
+Messenger().success('<%= @success %>');
+<% end %>
+<% unless @error.blank? %>
+Messenger().error('<%= @error %>');
+<% end %>

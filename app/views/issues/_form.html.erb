@@ -1,0 +1,25 @@
+<%= form_for issue, remote: true do |f| %>
+    <div class="form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :team_member %><br>
+      <%= f.select :team_member_id, options_from_collection_for_select(TeamMember.all, :id, :full_name), class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :student %><br>
+      <%= f.select :student_id, options_from_collection_for_select(Student.all, :id, :display_name), class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :status %>
+      <%= f.select :status, enum_to_options(Issue.statuses), class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit '保存', {class: 'btn btn-white btn-default btn-round'} %>
+    </div>
+<% end %>

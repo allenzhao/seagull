@@ -1,38 +1,61 @@
-<div id="login-panel" class="animated fadeInLeft">
-  <div class="header">
-    <%= image_tag 'seagull.png' %>
+<div class="login-container">
+
+  <div class="center">
+    <h1>
+      <i class="ace-icon fa fa-leaf green"></i>
+      <span class="red">Seagull</span>
+      <span class="white" id="id-text2">Platform</span>
+    </h1>
+    <h4 class="blue" id="id-company-text">&copy; 赵泽涵</h4>
   </div>
-  <%= render :partial => 'shared/flash_message' %>
-  <!--<div class="alert alert-info" role="alert">-->
 
-  <!--<p><span class="iconfont"><%= icon_for('notice').html_safe %></span>-->
-  <!--欢迎您注册Seagull。</p>-->
+  <div class="space-6"></div>
 
-  <!--<p>请使用您的 <%= CFG['allowed_domain'] %>邮箱注册以便接收激活信件。</p>-->
-  <!--</div>-->
-  <div class="box">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <div class="form-group">
-        <div class="input-group">
-          <%= f.text_field :login, {autofocus: true, class: 'form-control', placeholder: '您的企业 Email 帐号', required: true} %>
-          <span id="login-domain" class="input-group-addon">@<%= CFG['allowed_domain'] %></span>
+  <div class="position-relative">
+    <div id="login-box" class="login-box visible widget-box no-border">
+      <div class="widget-body">
+        <div class="widget-main">
+          <h4 class="header green lighter bigger">
+            <i class="ace-icon fa fa-users blue"></i>
+            新用户注册 </h4>
+          <%= render partial: 'shared/flash_message' %>
+          <div class="space-6"></div>
+          <p>请使用您的 @<%= CFG['allowed_domain'] %> 邮箱注册以便接收激活信件。</p>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <label class="block clearfix">
+              <span class="block input-icon input-icon-left">
+                <%= f.text_field :login, {autofocus: true, class: 'form-control', placeholder: '您的企业 Email 帐号', required: true} %>
+                <span class="input-group-addon">@<%= CFG['allowed_domain'] %></span>
+                <i class="ace-icon fa fa-user"></i>
+              </span>
+              </label>
+              <label class="block clearfix">
+              <span class="block input-icon input-icon-left">
+                <%= f.password_field :password, {autocomplete: 'off', class: 'form-control', placeholder: "请输入密码,(不少于#{@minimum_password_length}个字符 )"} %>
+                <i class="ace-icon fa fa-lock"></i>
+              </span>
+              </label>
+              <label class="block clearfix">
+              <span class="block input-icon input-icon-left">
+                <%= f.password_field :password_confirmation, {autocomplete: 'off', class: 'form-control', placeholder: '请确认密码'} %>
+                <i class="ace-icon fa fa-lock"></i>
+              </span>
+              </label>
+              <%= f.submit '注册', class: 'width-35 btn btn-sm btn-primary' %>
+          <% end %>
+
+        </div>
+
+        <div class="toolbar center">
+          <a href="#" data-target="#login-box" class="back-to-login-link">
+            <i class="ace-icon fa fa-arrow-left"></i>
+
+          </a>
         </div>
       </div>
-
-      <div class="form-group">
-        <%= f.password_field :password, {autocomplete: 'off', class: 'form-control', placeholder: "请输入密码,(不少于#{@minimum_password_length}个字符 )"} %>
-      </div>
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, {autocomplete: 'off', class: 'form-control', placeholder: '请确认密码'} %>
-      </div>
-      <div class="form-group">
-        <hr/>
-        <%= f.submit '注册', class: 'btn btn-lg btn-primary' %>
-      </div>
-    <% end %>
+      <!-- /.widget-body -->
+    </div>
+    <!-- /.login-box -->
   </div>
-
-  <div class="footer">
-    &copy; 2015 Seagull Platform all rights reserved.<br>
-  </div>
+  <!-- /.position-relative -->
 </div>

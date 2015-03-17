@@ -21,42 +21,6 @@
           </h4>
           <%= render partial: 'shared/flash_message' %>
           <div class="space-6"></div>
-          <!--<form>-->
-          <!--<fieldset>-->
-          <!--<div class="input-group">-->
-          <!--<label class="block clearfix">-->
-          <!--<span class="block input-icon input-icon-left">-->
-          <!--<i class="ace-icon fa fa-user"></i>-->
-          <!--<input type="text" class="form-control" placeholder="邮箱名"/>-->
-          <!--</span>-->
-          <!--</label>-->
-          <!--<span class="input-group-addon">-->
-          <!---->
-          <!--</span>-->
-          <!--</div>-->
-
-          <!--<label class="block clearfix">-->
-          <!--<span class="block input-icon input-icon-left">-->
-          <!--<i class="ace-icon fa fa-lock"></i>-->
-          <!--<input type="password" class="form-control" placeholder="密码"/>-->
-          <!--</span>-->
-          <!--</label>-->
-
-          <!--<div class="space"></div>-->
-
-          <!--<div class="clearfix">-->
-          <!--<label class="inline">-->
-          <!--<input type="checkbox" class="ace"/>-->
-          <!--<span class="lbl">记住我</span>-->
-          <!--</label>-->
-          <!--<button type="button" class="width-35 pull-right btn btn-sm btn-primary">-->
-          <!--<i class="ace-icon fa fa-key"></i>-->
-          <!--<span class="bigger-110">登录</span>-->
-          <!--</button>-->
-          <!--</div>-->
-          <!--<div class="space-4"></div>-->
-          <!--</fieldset>-->
-          <!--</form>-->
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <fieldset>
               <label class="block clearfix">

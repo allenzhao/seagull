@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316092016) do
+ActiveRecord::Schema.define(version: 20150317063537) do
 
   create_table "class_rooms", force: :cascade do |t|
     t.string   "IP",            limit: 255
@@ -51,17 +51,16 @@ ActiveRecord::Schema.define(version: 20150316092016) do
   end
 
   create_table "issues", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.integer  "user_id",     limit: 4
-    t.integer  "student_id",  limit: 4
-    t.integer  "status",      limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title",          limit: 255
+    t.text     "description",    limit: 65535
+    t.integer  "student_id",     limit: 4
+    t.integer  "status",         limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "team_member_id", limit: 4
   end
 
   add_index "issues", ["student_id"], name: "index_issues_on_student_id", using: :btree
-  add_index "issues", ["user_id"], name: "index_issues_on_user_id", using: :btree
 
   create_table "records", force: :cascade do |t|
     t.integer  "student_id",     limit: 4
@@ -207,7 +206,6 @@ ActiveRecord::Schema.define(version: 20150316092016) do
   add_foreign_key "details", "class_rooms"
   add_foreign_key "details", "students"
   add_foreign_key "issues", "students"
-  add_foreign_key "issues", "users"
   add_foreign_key "records", "students"
   add_foreign_key "team_members", "users"
 end

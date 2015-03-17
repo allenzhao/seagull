@@ -16,23 +16,23 @@
   </thead>
   <tbody>
   <% students.each do |student| %>
-    <tr>
-      <td><%= student.student_number %></td>
-      <td><%= student.name %></td>
-      <td><%= enum_to_human student.sex %></td>
-      <td><%= enum_to_human student.school %></td>
-      <td><%= student.grade %></td>
-      <td><%= student.student_class %></td>
-      <td><%= student.major %></td>
-      <td><%= student.phone_number %></td>
-      <td><%= student.dyned_class %></td>
-      <td><%= student.email %></td>
-      <td>
-        <%= link_to '更新', edit_student_path(student.id), data: {remote: true} %>
-        |
-        <%= link_to '删除', student_path(student.id), data: {confirm: "确定删除#{student.name}吗?"}, method: :delete %>
-      </td>
-    </tr>
+      <tr>
+        <td><%= student.student_number %></td>
+        <td><%= student.name %></td>
+        <td><%= enum_to_human student.sex %></td>
+        <td><%= enum_to_human student.school %></td>
+        <td><%= student.grade %></td>
+        <td><%= student.student_class %></td>
+        <td><%= student.major %></td>
+        <td><%= student.phone_number %></td>
+        <td><%= student.dyned_class %></td>
+        <td><%= student.email %></td>
+        <td>
+          <%= link_to '更新', edit_student_path(student.id), data: {remote: true} %>
+          |
+          <%= link_to '删除', student_path(student.id), data: {confirm: "确定删除#{student.name}吗?", remote: true}, method: :delete %>
+        </td>
+      </tr>
   <% end %>
   </tbody>
 </table>
