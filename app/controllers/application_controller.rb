@@ -13,23 +13,20 @@ class ApplicationController < ActionController::Base
   end
 
   def get_member
-    team_member = TeamMember.find_by_user_id(current_user.id)
-    unless team_member.present?
-      team_member = TeamMember.find_by_email(current_user.email)
-      team_member.user_id = current_user.id
-      team_member.save
+    if current_user.present?
+      team_member = TeamMember.find_by_user_id(current_user.id)
+      unless team_member.present?
+        team_member = TeamMember.find_by_email(current_user.email)
+        team_member.user_id = current_user.id
+        team_member.save
+      end
+      team_member
     end
-    team_member
   end
 
-  #
-  # def is_member_valid
-  #   if TeamMember.where(user: current_user.id).first.present?
-  #     true
-  #   else
-  #
-  #   end
-  # end
+  def user_for_paper_trail
+    get_member.present? ? get_member.full_name : 'System'
+  end
 
   protected
 

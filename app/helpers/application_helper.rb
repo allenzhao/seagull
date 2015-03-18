@@ -49,4 +49,9 @@ module ApplicationHelper
       content_tag(:i, '', class: 'menu-icon fa fa-caret-right') + content_tag(:span, "#{text}") + content_tag(:b, '', class: 'arrow')
     end
   end
+
+  def human_time(time)
+    "#{distance_of_time_in_words(time, Time.now, include_seconds: true)}前" if time.present?
+  end
+
 end

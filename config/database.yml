@@ -26,4 +26,5 @@ test:
 production:
   <<: *default
   database: seagull_production
-  password: ilovesuits
+  username: sea
+  password: Mn1SEA!

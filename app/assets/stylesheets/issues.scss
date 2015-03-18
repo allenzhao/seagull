@@ -1,3 +1,26 @@
 // Place all the styles related to the issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.issue-changes {
+  font-size: 12px;
+  font-family: Consolas, Menlo, Monaco, monospace;
+  .new {
+    color: #27ae60;
+  }
+}
+
+.issue-key {
+  font-weight: bold;
+  &.changed {
+    color: #ef4836;
+  }
+}
+
+.issue-value {
+  font-weight: bold;
+  color: #999;
+}
+
+.issue-box {
+  word-break: break-all;
+}
