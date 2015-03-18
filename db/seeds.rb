@@ -8,5 +8,8 @@
 # [:superadmin, :admin, :staff, :banned].each do |role|
 #   Role.find_or_create_by({ name: role })
 # end
+TeamMember.create({first_name: 'Admin', last_name: 'SEA', email: 'admin@uibesea.org'})
+TeamMember.create({first_name: 'Admin', last_name: 'Super', email: 'admin@allenzhao.com'})
+
 
 

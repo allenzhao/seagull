@@ -12,3 +12,4 @@ test:
 
 production:
   <<: *default
+  allowed_domain: uibesea.org
