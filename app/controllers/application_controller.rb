@@ -17,8 +17,12 @@ class ApplicationController < ActionController::Base
       team_member = TeamMember.find_by_user_id(current_user.id)
       unless team_member.present?
         team_member = TeamMember.find_by_email(current_user.email)
-        team_member.user_id = current_user.id
-        team_member.save
+        if team_member.present?
+          team_member.user_id = current_user.id
+          team_member.save
+        else
+          sign_out_and_redirect(current_user)
+        end
       end
       team_member
     end
