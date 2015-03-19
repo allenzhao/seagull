@@ -1,6 +1,7 @@
 class IssuesController < ApplicationController
 
   before_action :set_issue, except: [:index, :create, :my_issues]
+  skip_before_action :authenticate_user!, only:
 
   def index
     @issues = Issue.order('updated_at DESC').page(params[:page])
@@ -8,6 +9,10 @@ class IssuesController < ApplicationController
   end
 
   def show
+  end
+
+  def report
+
   end
 
   def my_issues
