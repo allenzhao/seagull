@@ -9,11 +9,11 @@
     </div>
     <div class="form-group">
       <%= f.label :team_member %><br>
-      <%= f.select :team_member_id, options_from_collection_for_select(TeamMember.all, :id, :full_name), class: 'form-control' %>
+      <%= f.select :team_member_id, options_from_collection_for_select(TeamMember.all, :id, :full_name, issue.team_member_id), class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :student %><br>
-      <%= f.select :student_id, options_from_collection_for_select(Student.all, :id, :display_name), class: 'form-control' %>
+      <%= f.select :student_id, options_from_collection_for_select(Student.all, :id, :display_name, issue.student_id), class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :status %>
