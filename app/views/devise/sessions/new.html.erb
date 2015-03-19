@@ -22,22 +22,22 @@
           <%= render partial: 'shared/flash_message' %>
           <div class="space-6"></div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <fieldset>
-              <label class="block clearfix">
+              <fieldset>
+                <label class="block clearfix">
               <span class="block input-icon input-icon-left">
                 <%= f.text_field :login, {autofocus: true, class: 'form-control', placeholder: '您的企业 Email 帐号', required: true} %>
                 <span class="input-group-addon">@<%= CFG['allowed_domain'] %></span>
                 <i class="ace-icon fa fa-user"></i>
               </span>
-              </label>
-              <label class="block clearfix">
+                </label>
+                <label class="block clearfix">
               <span class="block input-icon input-icon-left">
                 <%= f.password_field :password, {autocomplete: false, class: 'form-control', placeholder: '请输入您的密码', required: true} %>
                 <i class="ace-icon fa fa-lock"></i>
               </span>
-              </label>
-              <%= f.submit '登录', class: 'width-35 btn btn-sm btn-primary' %>
-            </fieldset>
+                </label>
+                <%= f.submit '登录', class: 'width-35 btn btn-sm btn-primary' %>
+              </fieldset>
 
           <% end %>
           <div class="space-6"></div>
@@ -46,14 +46,14 @@
 
         <div class="toolbar clearfix">
           <div>
-            <a href="#" data-target="#forgot-box" class="forgot-password-link">
+            <a href="#" class="forgot-password-link">
               <i class="ace-icon fa fa-arrow-left"></i>
               忘记密码
             </a>
           </div>
 
           <div>
-            <a href="#" data-target="#signup-box" class="user-signup-link">
+            <a href="<%= new_user_registration_path %>" class="user-signup-link">
               新用户注册
               <i class="ace-icon fa fa-arrow-right"></i>
             </a>
